@@ -3,6 +3,7 @@
 
 
 ## Usage (example with WebStorm)
+###### (You must have the IDE on the `dist` directory with the same name for building)
 ###### `./gen.sh <IDE Name> <IDE Version> <VNC Password> <VNC Resolution>`
 - `./gen.sh WebStorm 2022.01 123456 1920x1080`
 - `cd ./dist`
