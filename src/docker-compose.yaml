@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  %app_lower:
+    build: .
+    volumes:
+      - %app_config:/root/.config/JetBrains/%app%app_ver/
+      - %app_projects:/root/%appProjects
+
+volumes:
+  %app_config:
+  %app_projects:
