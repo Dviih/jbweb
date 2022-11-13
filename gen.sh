@@ -24,6 +24,8 @@ else
 fi
 
 app=$1
+app_lower=${app,,}
+app_c1=$(echo ${app,,} | sed 's/.*/\u&/')
 app_ver=$2
 password=$3
 
@@ -34,9 +36,11 @@ cp $path/src/* $path/dist/
 
 for file in $(ls -p $path/src | grep -v /);
 do
-    sed -i "s/%app/$app/" $path/dist/$file
-    sed -i "s/%app_ver/$app_ver/" $path/dist/$file
-    sed -i "s/%password/$password/" $path/dist/$file
-    sed -i "s/%res/$res/" $path/dist/$file
+    sed -i "s/%app_lower/$app_lower/g" $path/dist/$file
+    sed -i "s/%app_ver/$app_ver/g" $path/dist/$file
+    sed -i "s/%app_c1/$app_c1/g" $path/dist/$file
+    sed -i "s/%app/$app/g" $path/dist/$file
+    sed -i "s/%password/$password/g" $path/dist/$file
+    sed -i "s/%res/$res/g" $path/dist/$file
 done
 

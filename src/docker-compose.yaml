@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - %app_config:/root/.config/JetBrains/%app%app_ver/
-      - %app_projects:/root/%appProjects
+      - %app_projects:/root/%app_c1Projects
 
 volumes:
   %app_config:
